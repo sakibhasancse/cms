@@ -1,0 +1,75 @@
+<%- include('../adminInclude/header.ejs')%>
+</head>
+<body id="page-top">
+    <div id="wrapper">
+<%- include('../adminInclude/sidenav.ejs') %>
+<%- include('../adminInclude/topnav.ejs') %>
+
+            <% if(post.length>0){ %> 
+                <% for (let posts of post){ %> 
+            <div class="tab-content mt-sm-60 mt-30">
+                <div class="tab-pane fade show active" role="tabpanel">
+                    <div class="container-fluid px-xxl-65 px-xl-20">
+                        <div class="row justify-content-md-center">
+                            <div class=" col-lg-8 ">
+                                <div class="card card-profile-feed">
+                                    <div class="card-header card-header-action">
+                                        <div class="media align-items-center">
+                                            <div class="media-img-wrap d-flex mr-10">
+                                                <div class="avatar avatar-sm">
+                                                    <img src="/frontend/dist/img/avatar2.jpg" style="width: 50px; padding-right: 10px;" alt="user" class="avatar-img rounded-circle">
+                                                </div>
+                                            </div>
+                                            <div class="media-body" style="
+                                            margin-left: 10px;
+                                        ">
+                                                <div class="text-capitalize font-weight-500 text-dark"><%=user.name%></div>
+                                                <div class="font-13"><%=posts.createdOn%></div>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                   
+                                    <div class="card-body">
+                                        <p class="card-text mb-30"><%=posts.title%></p>
+                                        <div class="card">
+                                            <div class="position-relative">
+                                                <img class="card-img-top d-block" src="/<%=posts.image%>" alt="Card image cap">
+                             
+                                            </div>
+                                            <div class="card-body">
+                                                
+                                                <p class="card-text"><%=posts.description%></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer justify-content-between">
+                                        <div style="display: flex;">
+                                            <a href="#"><i class="ion ion-md-heart text-primary"></i>30K</a>
+                                            
+
+                                        </div>
+                                        <div>
+
+
+                                            
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            
+                            </div>
+                            
+                               
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <% } %> 
+            <% }else{ %> 	
+                <h2>no post</h2>
+            <% } %> 
+  
+
+<%- include('../adminInclude/footer.ejs') %>
+

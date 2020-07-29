@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<!-- 
+Template Name: dashgrin - Responsive Bootstrap 4 Admin Dashboard Template
+Author: Hencework
+
+License: You must have a valid license purchased only from themeforest to legally use the template for your project.
+-->
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>dashgrin I Signup</title>
+    <meta name="description" content="A responsive bootstrap 4 admin dashboard template by hencework" />
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/forms.css">
+
+    <link href="frontend/dist/css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <div class="hk-wrapper">
+
+    <!-- Main Content -->
+    <div class="hk-pg-wrapper hk-auth-wrapper">
+        
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12 pa-0">
+                    <div class="auth-form-wrap pt-xl-0 pt-70">
+                        <div class="auth-form w-xl-30 w-sm-50 w-100">
+                            <a class="auth-brand text-center d-block mb-20" href="#">
+                                <img class="brand-img" style="width: 140px;" src="frontend/dist/img/dh.png" alt="brand" />
+                            </a>
+                            <div class="col-lg-12">
+                              <% if (errorMessage) { %>
+                                  <div class="user-message user-message--error"><%= errorMessage %></div>
+                              <% } %>
+                              <div class="login-form">
+                                <div class="text-center">
+                                  <h1 class="h4 text-gray-900 mb-4">Reset Password</h1>
+                                </div>
+                            
+                
+                  <form  action="/reset" method="POST" >
+                   
+                      <div class="form-group">
+                          <label for="email">E-Mail</label>
+                          <input
+                          class="form-control<%=validationError.find(e=> e.param === 'email')?'invalid' : '' %> "  
+                           type="email" name="email" id="email" value="<%=oldInput.email%>" >
+                      </div>
+                   
+                      <input type="hidden" name="_csrf" value="<%= csrfTokenss %>">
+                      <button type="submit" class="btn btn-primary btn-block">Reset Password</button>
+                     
+                      <hr>
+                      <div class="text-center">
+                        <p class="text-right"><a  href="/signup">Create an Account!</a></p>
+                      </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Main Content -->
+
+</div>
+
+   <!-- jQuery -->
+   <script src="frontend/vendors/jquery/dist/jquery.min.js"></script>
+
+   <!-- Bootstrap Core JavaScript -->
+   <script src="frontend/vendors/popper.js/dist/umd/popper.min.js"></script>
+   <script src="frontend/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+
+   <!-- Slimscroll JavaScript -->
+   <script src="frontend/dist/js/jquery.slimscroll.js"></script>
+
+   <!-- Fancy Dropdown JS -->
+   <script src="frontend/dist/js/dropdown-bootstrap-extended.js"></script>
+
+   <!-- FeatherIcons JavaScript -->
+   <script src="frontend/dist/js/feather.min.js"></script>
+
+   <!-- Init JavaScript -->
+   <script src="frontend/dist/js/init.js"></script>
+
+</body>
+
+</html>
