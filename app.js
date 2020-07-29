@@ -39,8 +39,8 @@ const authRoutes = require("./routes/auth");
 
 app.use(cookieparser(process.env.COOKIS_SECRET));
 // app.use(fileUpload())
-
-
+var compression = require('compression')
+app.use(compression())
 app.use(bodyParser.json({ limit: "50mb" }));
 app.use(bodyParser.urlencoded({ limit: "50mb", extended: true, parameterLimit: 50000 }));
 
@@ -124,8 +124,8 @@ mongoose
           })
       }
     });
-    const PORT =process.env.PORT || 4000
-    app.listen(PORT);
+   
+    app.listen(process.env.PORT || 4000);
     console.log("server is running");
   })
   .catch((err) => {
