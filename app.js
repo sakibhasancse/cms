@@ -13,9 +13,9 @@ const User = require("./models/user");
 const bcrypt = require('bcryptjs');
 
 
-// require("dotenv").config({
-//   path: "./config/config.env",
-// });
+require("dotenv").config({
+  path: "./config/config.env",
+});
 
 const MONGODB_URI = process.env.MONGODB_DATABASE;
 
