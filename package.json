@@ -43,6 +43,6 @@
     "sequelize": "^5.0.0-beta.11",
     "sib-api-v3-sdk": "^7.2.4",
     "slug": "^3.3.0",
-    "socket.io": "^2.3.0"
+    "socket.io": "^2.4.0"
   }
 }
